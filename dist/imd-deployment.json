@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "launchId": "8f66e2dc-7535-4b88-ac9a-1323bf7e9533",
+  "chainId": 11155111,
+  "sourceCommit": "532fff9106eb2684fdad7570aa4df6127da545ff",
+  "attestationHash": "908d76737fed478be3f2f0add76589c2a7081b3b38d7b2308b0a3e5b5bc951d0",
+  "contracts": [
+    {
+      "name": "MAXT",
+      "address": "0x1a9ec1090618c482723cb4a0dc981511b8b1c4dc",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "abiPath": "abi/MAXT.json"
+    },
+    {
+      "name": "MaxTxHook",
+      "address": "0xb0f72f21b9b98d9be1223662e45e60e88b6a90c0",
+      "abiHash": "88133cb8ba3626496b444708bdb04684f7b89919c4dbc1af572b7499f1bce4a7",
+      "abiPath": "abi/MaxTxHook.json"
+    }
+  ],
+  "assets": [
+    {
+      "path": "abi/MAXT.json",
+      "sha256": "47e57a3fcbad55990d5fb2b23a5b67e1dc571d9a4e5ba90035ad77d71b0227f9"
+    },
+    {
+      "path": "abi/MaxTxHook.json",
+      "sha256": "ec4bd32ae7d15d369531bc07f9b00c50fdbcb1ebc50e56d2d03912643c321818"
+    },
+    {
+      "path": "assets/ccip-B094K6Gc.js",
+      "sha256": "b720d3a3daa2efef10c881a75f6adc13514f09c2859f7fcf8d74d9867f050dff"
+    },
+    {
+      "path": "assets/index-Qoftl8a5.js",
+      "sha256": "d73aac63907532e327e7e24f42606437660ea01a223b09ed12c662a959c0ec30"
+    },
+    {
+      "path": "assets/index-b9Ge0iF1.css",
+      "sha256": "b11ff7d10b5c40d2d9d89e3a79637ed21d18be8072179504e63602eb015dbf64"
+    },
+    {
+      "path": "index.html",
+      "sha256": "cbf6b3c4fdd7cbfcf3a8fab55959fdcdf1ff97e7791058a92f1150ce92de47c6"
+    }
+  ],
+  "network": {
+    "chainId": 11155111,
+    "name": "Sepolia",
+    "testnet": true,
+    "rpcUrls": [
+      "https://ethereum-sepolia-rpc.publicnode.com",
+      "https://rpc.sepolia.ethpandaops.io",
+      "https://sepolia.rpc.sentio.xyz"
+    ],
+    "explorer": "https://sepolia.etherscan.io",
+    "nativeCurrency": {
+      "name": "Sepolia Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [
+      "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
+      "https://www.alchemy.com/faucets/ethereum-sepolia"
+    ],
+    "uniswapV4": {
+      "poolManager": "0xe03a1074c86cfedd5c142c4f04f1a1536e203543",
+      "universalRouter": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+      "quoter": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+      "stateView": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+      "positionManager": "0x429ba70129df741b2ca2a85bc3a2a3328e5c09b4",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3"
+    }
+  }
+}

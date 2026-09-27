@@ -1,0 +1,554 @@
+{
+  "base": "http://127.0.0.1:41121/preview/",
+  "scenarios": [
+    {
+      "name": "no-wallet-desktop-1280",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "overflow": {
+        "scrollWidth": 1280,
+        "innerWidth": 1280
+      },
+      "capExcerpt": [
+        "Buy cap",
+        "Active",
+        "",
+        "Each buy may deliver at most 5,000,000 MAXT while the cap window is open. Sells are never capped.",
+        "",
+        "CAP PER BUY",
+        "5,000,000 MAXT",
+        "BLOCKS LEFT"
+      ],
+      "walletText": "No browser wallet found. Install an EIP-1193 wallet extension, then reload this page.",
+      "screenshot": "docs/validation/screenshots/no-wallet-desktop-1280.jpg"
+    },
+    {
+      "name": "no-wallet-tablet-820",
+      "viewport": {
+        "width": 820,
+        "height": 1100
+      },
+      "overflow": {
+        "scrollWidth": 820,
+        "innerWidth": 820
+      },
+      "capExcerpt": [
+        "Buy cap",
+        "Active",
+        "",
+        "Each buy may deliver at most 5,000,000 MAXT while the cap window is open. Sells are never capped.",
+        "",
+        "CAP PER BUY",
+        "5,000,000 MAXT",
+        "BLOCKS LEFT"
+      ],
+      "walletText": "No browser wallet found. Install an EIP-1193 wallet extension, then reload this page.",
+      "screenshot": "docs/validation/screenshots/no-wallet-tablet-820.jpg"
+    },
+    {
+      "name": "no-wallet-mobile-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": {
+        "scrollWidth": 390,
+        "innerWidth": 390
+      },
+      "capExcerpt": [
+        "Buy cap",
+        "Active",
+        "",
+        "Each buy may deliver at most 5,000,000 MAXT while the cap window is open. Sells are never capped.",
+        "",
+        "CAP PER BUY",
+        "5,000,000 MAXT",
+        "BLOCKS LEFT"
+      ],
+      "walletText": "No browser wallet found. Install an EIP-1193 wallet extension, then reload this page.",
+      "screenshot": "docs/validation/screenshots/no-wallet-mobile-390.jpg"
+    },
+    {
+      "name": "no-wallet-mobile-320",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "overflow": {
+        "scrollWidth": 320,
+        "innerWidth": 320
+      },
+      "capExcerpt": [
+        "Buy cap",
+        "Active",
+        "",
+        "Each buy may deliver at most 5,000,000 MAXT while the cap window is open. Sells are never capped.",
+        "",
+        "CAP PER BUY",
+        "5,000,000 MAXT",
+        "BLOCKS LEFT"
+      ],
+      "walletText": "No browser wallet found. Install an EIP-1193 wallet extension, then reload this page.",
+      "screenshot": "docs/validation/screenshots/no-wallet-mobile-320.jpg"
+    },
+    {
+      "name": "wallet-wrong-chain",
+      "connectLabel": "Connect wallet",
+      "swapDisabledWhileWrongChain": true,
+      "reason": "Switch the wallet to Sepolia to swap.",
+      "chip": "0x232E…1b0A\n(opens the explorer in a new tab)",
+      "screenshot": "docs/validation/screenshots/wallet-wrong-chain-1280.jpg"
+    },
+    {
+      "name": "quote-ok",
+      "amount": "0.01 ETH",
+      "quote": [
+        "You receive (estimated)",
+        "495,993.93 MAXT",
+        "Minimum after 0.5% slippage",
+        "493,513.96 MAXT",
+        "Rate",
+        "1 ETH ≈ 49,599,393 MAXT"
+      ],
+      "screenshot": "docs/validation/screenshots/wallet-quote-ok-1280.jpg"
+    },
+    {
+      "name": "cap-warning",
+      "amount": "1 ETH",
+      "warning": [
+        "This buy would revert. This buy would deliver 46,731,075 MAXT, above the 5,000,000 MAXT per-buy cap, so the hook would revert it. Reduce the amount.",
+        "",
+        "Roughly 0.106995 ETH or less would stay under the cap at the current price (an estimate: price impact is not linear)."
+      ],
+      "disabled": true,
+      "reason": "This buy is above the cap and would revert. Reduce the amount.",
+      "screenshot": "docs/validation/screenshots/wallet-cap-warning-1280.jpg"
+    },
+    {
+      "name": "buy-rejected-in-wallet",
+      "tx": {
+        "to": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+        "value": "0x2386f26fc10000",
+        "dataPrefix": "0x3593564c",
+        "dataLength": 2186
+      },
+      "screenshot": "docs/validation/screenshots/wallet-rejected-1280.jpg"
+    },
+    {
+      "name": "sell-steps-and-balance-validation",
+      "steps": [
+        "Approve MAXT for Permit2",
+        "Next",
+        "Approve the Universal Router in Permit2",
+        "Pending",
+        "Sell MAXT",
+        "Pending"
+      ],
+      "quote": "The pool cannot fill this sell: it does not hold enough ETH yet. Sells become possible once buys have added ETH to the pool.",
+      "submitLabel": "Approve MAXT for Permit2",
+      "error": "Enter at most 0 MAXT, your current balance.",
+      "screenshot": "docs/validation/screenshots/wallet-sell-1280.jpg"
+    },
+    {
+      "name": "mobile-connected-cap-warning",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": {
+        "scrollWidth": 390,
+        "innerWidth": 390
+      },
+      "screenshot": "docs/validation/screenshots/wallet-cap-warning-390.jpg"
+    }
+  ],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "contrast": [
+    {
+      "label": "lede text on card",
+      "fg": "rgb(68,78,91)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.45
+    },
+    {
+      "label": "stat label (muted uppercase 13px) on card",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 6.28
+    },
+    {
+      "label": "unit text on card",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 6.28
+    },
+    {
+      "label": "help text on card",
+      "fg": "rgb(68,78,91)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.45
+    },
+    {
+      "label": "subtitle on header",
+      "fg": "rgb(68,78,91)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.45
+    },
+    {
+      "label": "eyebrow on header",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 6.28
+    },
+    {
+      "label": "active badge",
+      "fg": "rgb(0,94,38)",
+      "bg": "rgb(216,249,221)",
+      "ratio": 7.04
+    },
+    {
+      "label": "muted badge",
+      "missing": true
+    },
+    {
+      "label": "table header on subtle bg",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 6.28
+    },
+    {
+      "label": "accent link on card",
+      "fg": "rgb(24,72,166)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.35
+    },
+    {
+      "label": "primary button label",
+      "fg": "rgb(255,255,255)",
+      "bg": "rgb(40,92,194)",
+      "ratio": 6.18
+    },
+    {
+      "label": "selected side control",
+      "fg": "rgb(24,72,166)",
+      "bg": "rgb(224,236,255)",
+      "ratio": 7
+    },
+    {
+      "label": "warning notice",
+      "missing": true
+    },
+    {
+      "label": "danger notice",
+      "missing": true
+    },
+    {
+      "label": "inline error on card",
+      "missing": true
+    },
+    {
+      "label": "stat value on card",
+      "fg": "rgb(17,27,40)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 17.34
+    },
+    {
+      "label": "footer text on page",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(248,250,253)",
+      "ratio": 6
+    },
+    {
+      "label": "wallet note on header",
+      "fg": "rgb(68,78,91)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.45
+    },
+    {
+      "label": "muted text on quote panel",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(241,244,248)",
+      "ratio": 5.69
+    },
+    {
+      "label": "placeholder in input",
+      "fg": "rgb(88,97,109)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 6.28
+    }
+  ],
+  "tabWalk": [
+    {
+      "tag": "A",
+      "text": "Skip to content",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0xb0f72f…6a90c0 (opens the explorer in a",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "text": "buy",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "segOutline": "solid 2px",
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "text": "0.5",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0x1a9ec1090618c482723cb4a0dc981511b8b1c4",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0xb0f72f21b9b98d9be1223662e45e60e88b6a90",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0xe03a1074c86cfedd5c142c4f04f1a1536e2035",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf9",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0x61b3f2011a92d183c7dbadbda940a7555ccf92",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "0x000000000022d473030f116ddee9f6b43ac78b",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "cloud.google.com/application/web3/faucet",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "www.alchemy.com/faucets/ethereum-sepolia",
+      "outline": "solid 2px oklch(0.5 0.17 262)",
+      "disabled": false
+    },
+    null
+  ],
+  "walletLog": [
+    {
+      "method": "wallet_requestPermissions",
+      "params": [
+        {
+          "eth_accounts": {}
+        }
+      ]
+    },
+    {
+      "method": "wallet_switchEthereumChain",
+      "params": [
+        {
+          "chainId": "0xaa36a7"
+        }
+      ]
+    },
+    {
+      "method": "wallet_addEthereumChain",
+      "params": [
+        {
+          "blockExplorerUrls": [
+            "https://sepolia.etherscan.io"
+          ],
+          "chainId": "0xaa36a7",
+          "chainName": "Sepolia",
+          "nativeCurrency": {
+            "name": "Sepolia Ether",
+            "symbol": "ETH",
+            "decimals": 18
+          },
+          "rpcUrls": [
+            "https://ethereum-sepolia-rpc.publicnode.com",
+            "https://rpc.sepolia.ethpandaops.io",
+            "https://sepolia.rpc.sentio.xyz"
+          ]
+        }
+      ]
+    },
+    {
+      "method": "wallet_switchEthereumChain",
+      "params": [
+        {
+          "chainId": "0xaa36a7"
+        }
+      ]
+    }
+  ],
+  "a11y": {
+    "buttons": [
+      {
+        "tag": "A",
+        "name": "Skip to content",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0xb0f72f…6a90c0 (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Buy MAXT",
+        "disabled": true
+      },
+      {
+        "tag": "A",
+        "name": "0x1a9ec1090618c482723cb4a0dc981511b8b1c4dc (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0xb0f72f21b9b98d9be1223662e45e60e88b6a90c0 (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0xe03a1074c86cfedd5c142c4f04f1a1536e203543 (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227 (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "0x000000000022d473030f116ddee9f6b43ac78ba3 (opens the explorer in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "cloud.google.com/application/web3/faucet/ethereum/sepolia (opens in a new tab)",
+        "disabled": false
+      },
+      {
+        "tag": "A",
+        "name": "www.alchemy.com/faucets/ethereum-sepolia (opens in a new tab)",
+        "disabled": false
+      }
+    ],
+    "inputs": [
+      {
+        "id": "",
+        "type": "radio",
+        "labelled": true
+      },
+      {
+        "id": "",
+        "type": "radio",
+        "labelled": true
+      },
+      {
+        "id": "_r_0_",
+        "type": "text",
+        "labelled": true
+      },
+      {
+        "id": "_r_1_",
+        "type": "text",
+        "labelled": true
+      }
+    ],
+    "headings": [
+      "H1:Maxtx (MAXT)",
+      "H2:Buy cap",
+      "H2:Pool",
+      "H2:Swap",
+      "H2:Activity",
+      "H3:Cap window events",
+      "H3:Recent swaps",
+      "H2:Contracts"
+    ],
+    "landmarks": {
+      "main": 1,
+      "header": 1,
+      "footer": 1
+    }
+  },
+  "contrastConnected": [
+    {
+      "label": "danger notice text/bg",
+      "fg": "rgb(158,21,30)",
+      "bg": "rgb(255,230,227)",
+      "ratio": 6.85
+    },
+    {
+      "label": "warning notice text/bg",
+      "missing": true
+    },
+    {
+      "label": "inline error on card",
+      "missing": true
+    },
+    {
+      "label": "address chip",
+      "fg": "rgb(17,27,40)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 17.34
+    },
+    {
+      "label": "Max button label on card",
+      "fg": "rgb(24,72,166)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.35
+    },
+    {
+      "label": "balance aside on card",
+      "fg": "rgb(68,78,91)",
+      "bg": "rgb(255,255,255)",
+      "ratio": 8.45
+    }
+  ]
+}

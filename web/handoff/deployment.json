@@ -1,0 +1,54 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-296-maxtxhook",
+  "version": 1,
+  "launchId": "8f66e2dc-7535-4b88-ac9a-1323bf7e9533",
+  "manifest": {
+    "hook": {
+      "contract": "MaxTxHook",
+      "permissions": [
+        "afterInitialize",
+        "beforeSwap",
+        "afterSwap"
+      ],
+      "constructorArgs": [
+        "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+      ]
+    },
+    "kind": "univ4_hook",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "792281625142643375935439503360000",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "MaxTxHook (src/MaxTxHook.sol) takes only the Sepolia PoolManager address; MAXT (src/MAXT.sol) has a zero-argument constructor. ABIs are in docs/abi/MaxTxHook.json and docs/abi/MAXT.json. The intended pool has native ETH as currency0 and MAXT as currency1. initialPrice is decimal sqrtPriceX96, matching test/helpers/LaunchParameters.sol: 100,000,000 MAXT per ETH with 18 decimals for both currencies. The local factory rehearsal initializes at this price, seeds one-sided MAXT liquidity, and executes the first buy into the ETH-less pool. The three enabled permissions encode address bits 0x10c0 under mask 0x3fff; all other permissions, including return-delta permissions, are false. The constructor validates these bits. Every callback requires the configured PoolManager. Native-ETH pool initialization starts a 7,200-block window keyed by PoolId. While block.number < endBlock, beforeSwap rejects exact-output buys requesting more than 5,000,000 MAXT and afterSwap rejects buys whose absolute delta.amount1 exceeds that cap. Exactly CAP is allowed; sells and buys at or after endBlock are uncapped. Non-native-ETH pools are unaffected. The cap is per swap: multiple swaps, even in one transaction, can exceed it in aggregate. The hook adds no fee, handles no funds, and has no admin. This manifest describes the implementation; launch policy, signed artifact linkage, admission and deployment belong to services.",
+    "token": {
+      "name": "Maxtx",
+      "symbol": "MAXT",
+      "contract": "MAXT",
+      "decimals": 18
+    }
+  },
+  "contracts": [
+    {
+      "name": "MAXT",
+      "txHash": "0x3bced82ed9f7f295e9c6c1c0d256fa9f4826c2be63969e9c09465952672d01a5",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "address": "0x1a9ec1090618c482723cb4a0dc981511b8b1c4dc",
+      "blockNumber": 11791476,
+      "creationCodeHash": "0241b9a14ecfb1935607150a4148d24a02bd5a04757e504cc876d72cf9c0a218"
+    },
+    {
+      "name": "MaxTxHook",
+      "txHash": "0x3bced82ed9f7f295e9c6c1c0d256fa9f4826c2be63969e9c09465952672d01a5",
+      "abiHash": "88133cb8ba3626496b444708bdb04684f7b89919c4dbc1af572b7499f1bce4a7",
+      "address": "0xb0f72f21b9b98d9be1223662e45e60e88b6a90c0",
+      "blockNumber": 11791476,
+      "creationCodeHash": "40329e9384f4ba9b90cdf9fe6134fee843bff5523c8044ea710233fb8eb294c6"
+    }
+  ],
+  "sourceCommit": "532fff9106eb2684fdad7570aa4df6127da545ff",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "908d76737fed478be3f2f0add76589c2a7081b3b38d7b2308b0a3e5b5bc951d0"
+}
